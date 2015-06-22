@@ -1,0 +1,2 @@
+# vagrant
+openSUSE for Vagrant
