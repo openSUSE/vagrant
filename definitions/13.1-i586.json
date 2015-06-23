@@ -29,7 +29,7 @@
         ["modifyvm", "{{.Name}}", "--cpus", "1"]
       ],
 
-      "output_directory": "images/{{user `os`}}-virtualbox-{{user `arch`}}-{{user `version`}}",
+      "output_directory": "images/openSUSE-{{user `os`}}-virtualbox-{{user `arch`}}-{{user `version`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "disk_size": 20480,
@@ -65,7 +65,7 @@
       "format": "qcow2",
       "vm_name": "opensuse-{{user `os`}}-{{user `arch`}}",
 
-      "output_directory": "images/{{user `os`}}-libvirt-{{user `arch`}}-{{user `version`}}",
+      "output_directory": "images/openSUSE-{{user `os`}}-libvirt-{{user `arch`}}-{{user `version`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "disk_size": 20480,
@@ -91,7 +91,7 @@
   "post-processors": [
     {
       "keep_input_artifact": false,
-      "output": "images/{{user `os`}}-{{.Provider}}-{{user `arch`}}-{{user `version`}}.box",
+      "output": "images/openSUSE-{{user `os`}}-{{.Provider}}-{{user `arch`}}-{{user `version`}}.box",
       "type": "vagrant",
       "only": ["virtualbox", "libvirt"]
     }
