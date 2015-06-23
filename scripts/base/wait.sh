@@ -2,9 +2,9 @@
 set -x
 
 RETRIES=7
-DELAY=1
+DELAY=10
 FACTOR=2
-LOCKED=4
+LOCKED=7
 
 while true
 do
