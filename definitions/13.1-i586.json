@@ -1,0 +1,118 @@
+{
+  "variables": {
+    "version": "1.0.0",
+    "os": "13.1",
+    "arch": "i586",
+
+    "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-DVD-i586.iso",
+    "iso_checksum": "1bd6223430910f6d5a168d4e19171462",
+    "iso_checksum_type": "md5",
+
+    "qemu_accelerator": "kvm"
+  },
+  "builders": [
+    {
+      "name": "virtualbox",
+      "type": "virtualbox-iso",
+
+      "iso_url": "{{user `iso_url`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+
+      "vm_name": "opensuse-{{user `os`}}-{{user `arch`}}",
+      "guest_os_type": "OpenSUSE",
+      "guest_additions_mode": "upload",
+      "hard_drive_interface": "sata",
+
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "512"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+      ],
+
+      "output_directory": "images/{{user `os`}}-virtualbox-{{user `arch`}}-{{user `version`}}",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "disk_size": 20480,
+      "ssh_port": 22,
+      "headless": false,
+      "http_directory": "http",
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -p",
+      "boot_command": [
+        "<esc><enter><wait>",
+        "linux ",
+        "biosdevname=0 ",
+        "net.ifnames=0 ",
+        "netdevice=eth0 ",
+        "netsetup=dhcp ",
+        "lang=en_US.utf8 ",
+        "textmode=1 ",
+        "instmode=dvd ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/13.1-general.xml ",
+        "<enter><wait>"
+      ]
+    },
+    {
+      "name": "libvirt",
+      "type": "qemu",
+
+      "iso_url": "{{user `iso_url`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+
+      "accelerator": "{{user `qemu_accelerator`}}",
+      "disk_interface": "virtio",
+      "net_device": "virtio-net",
+      "format": "qcow2",
+      "vm_name": "opensuse-{{user `os`}}-{{user `arch`}}",
+
+      "output_directory": "images/{{user `os`}}-libvirt-{{user `arch`}}-{{user `version`}}",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "disk_size": 20480,
+      "ssh_port": 22,
+      "headless": false,
+      "http_directory": "http",
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -p",
+      "boot_command": [
+        "<esc><enter><wait>",
+        "linux ",
+        "biosdevname=0 ",
+        "net.ifnames=0 ",
+        "netdevice=eth0 ",
+        "netsetup=dhcp ",
+        "lang=en_US.utf8 ",
+        "textmode=1 ",
+        "instmode=dvd ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/13.1-libvirt.xml ",
+        "<enter><wait>"
+      ]
+    }
+  ],
+  "post-processors": [
+    {
+      "keep_input_artifact": false,
+      "output": "images/{{user `os`}}-{{.Provider}}-{{user `arch`}}-{{user `version`}}.box",
+      "type": "vagrant",
+      "only": ["virtualbox", "libvirt"]
+    }
+  ],
+  "provisioners": [
+    {
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "type": "shell",
+      "scripts": [
+        "scripts/base/wait.sh",
+        "scripts/base/base.sh",
+        "scripts/13.1/update.sh",
+        "scripts/base/vmtools.sh",
+        "scripts/base/sshd.sh",
+        "scripts/base/bindfs.sh",
+        "scripts/base/puppet.sh",
+        "scripts/13.1/chef.sh",
+        "scripts/base/vagrant.sh",
+        "scripts/base/cleanup.sh",
+        "scripts/base/zerodisk.sh"
+      ]
+    }
+  ]
+}

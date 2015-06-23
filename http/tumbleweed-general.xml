@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<!DOCTYPE profile>
+
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <general>
+    <mode>
+      <confirm config:type="boolean">false</confirm>
+    </mode>
+  </general>
+
+  <bootloader>
+    <global>
+      <append> resume=/dev/system/swap splash=silent quiet showopts</append>
+      <append_failsafe>showopts apm=off noresume edd=off powersaved=off nohz=off highres=off processor.max_cstate=1 nomodeset x11failsafe</append_failsafe>
+      <default>openSUSE Tumbleweed</default>
+      <distributor>openSUSE Tumbleweed</distributor>
+      <gfxbackground>/boot/grub2/themes/openSUSE/background.png</gfxbackground>
+      <gfxmode>auto</gfxmode>
+      <gfxtheme>/boot/grub2/themes/openSUSE/theme.txt</gfxtheme>
+      <hiddenmenu>false</hiddenmenu>
+      <lines_cache_id>0</lines_cache_id>
+      <os_prober>true</os_prober>
+      <terminal>gfxterm</terminal>
+      <timeout config:type="integer">5</timeout>
+    </global>
+
+    <loader_type>grub2</loader_type>
+  </bootloader>
+
+  <firewall>
+    <enable_firewall config:type="boolean">false</enable_firewall>
+    <start_firewall config:type="boolean">false</start_firewall>
+  </firewall>
+
+  <keyboard>
+    <keymap>english-us</keymap>
+  </keyboard>
+
+  <language>
+    <language>en_US</language>
+    <languages>en_US</languages>
+  </language>
+
+  <networking>
+    <dhcp_options>
+      <dhclient_client_id/>
+      <dhclient_hostname_option>AUTO</dhclient_hostname_option>
+    </dhcp_options>
+
+    <dns>
+      <hostname>vagrant-openSUSE-Tumbleweed</hostname>
+      <domain>vagrantup.com</domain>
+
+      <resolv_conf_policy>auto</resolv_conf_policy>
+
+      <dhcp_hostname config:type="boolean">false</dhcp_hostname>
+      <write_hostname config:type="boolean">false</write_hostname>
+    </dns>
+
+    <interfaces config:type="list">
+      <interface>
+        <bootproto>dhcp</bootproto>
+        <device>eth0</device>
+        <startmode>auto</startmode>
+        <usercontrol>no</usercontrol>
+      </interface>
+    </interfaces>
+  </networking>
+
+  <partitioning config:type="list">
+    <drive>
+      <device>/dev/sda</device>
+      <initialize config:type="boolean">true</initialize>
+      <use>all</use>
+    </drive>
+  </partitioning>
+
+  <report>
+    <errors>
+      <log config:type="boolean">true</log>
+      <show config:type="boolean">true</show>
+      <timeout config:type="integer">10</timeout>
+    </errors>
+
+    <messages>
+      <log config:type="boolean">true</log>
+      <show config:type="boolean">true</show>
+      <timeout config:type="integer">10</timeout>
+    </messages>
+
+    <warnings>
+      <log config:type="boolean">true</log>
+      <show config:type="boolean">true</show>
+      <timeout config:type="integer">10</timeout>
+    </warnings>
+
+    <yesno_messages>
+      <log config:type="boolean">true</log>
+      <show config:type="boolean">true</show>
+      <timeout config:type="integer">10</timeout>
+    </yesno_messages>
+  </report>
+
+  <software>
+    <do_online_update config:type="boolean">false</do_online_update>
+    <install_recommended config:type="boolean">true</install_recommended>
+
+    <kernel>kernel-default</kernel>
+
+    <patterns config:type="list">
+      <pattern>base</pattern>
+      <pattern>sw_management</pattern>
+      <pattern>yast2_basis</pattern>
+    </patterns>
+
+    <packages config:type="list">
+      <package>curl</package>
+      <package>dhcp</package>
+      <package>dhcp-client</package>
+      <package>gcc</package>
+      <package>git</package>
+      <package>grub2</package>
+      <package>kernel-devel</package>
+      <package>less</package>
+      <package>make</package>
+      <package>sudo</package>
+      <package>vim</package>
+      <package>wget</package>
+      <package>yast2-services-manager</package>
+    </packages>
+  </software>
+
+  <timezone>
+    <hwclock>UTC</hwclock>
+    <timezone>Europe/Berlin</timezone>
+  </timezone>
+
+  <deploy_image>
+    <image_installation config:type="boolean">false</image_installation>
+  </deploy_image>
+
+  <services-manager>
+    <default_target>multi-user</default_target>
+
+    <services>
+      <enable config:type="list">
+        <service>sshd</service>
+      </enable>
+    </services>
+  </services-manager>
+
+  <scripts>
+    <chroot-scripts config:type="list">
+      <script>
+        <filename>newrename.sh</filename>
+        <interpreter>shell</interpreter>
+
+        <source>ln -sf /dev/null /etc/udev/rules.d/80-net-setup-link.rules</source>
+
+        <feedback config:type="boolean">false</feedback>
+        <debug config:type="boolean">true</debug>
+        <chrooted config:type="boolean">true</chrooted>
+      </script>
+
+      <script>
+        <filename>oldrename.sh</filename>
+        <interpreter>shell</interpreter>
+
+        <source>ln -sf /dev/null /etc/udev/rules.d/80-net-name-slot.rules</source>
+
+        <feedback config:type="boolean">false</feedback>
+        <debug config:type="boolean">true</debug>
+        <chrooted config:type="boolean">true</chrooted>
+      </script>
+    </chroot-scripts>
+  </scripts>
+
+  <users config:type="list">
+    <user>
+      <username>root</username>
+      <home>/root</home>
+      <user_password>vagrant</user_password>
+
+      <uid>0</uid>
+      <gid>0</gid>
+      <shell>/bin/bash</shell>
+
+      <encrypted config:type="boolean">false</encrypted>
+    </user>
+
+    <user>
+      <username>vagrant</username>
+      <home>/home/vagrant</home>
+      <user_password>vagrant</user_password>
+
+      <uid>1000</uid>
+      <gid>100</gid>
+      <shell>/bin/bash</shell>
+
+      <encrypted config:type="boolean">false</encrypted>
+    </user>
+  </users>
+</profile>
