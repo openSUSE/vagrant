@@ -1,4 +1,4 @@
-# Vagrant boxes
+# Vagrant
 
 This repository stores our [Packer](https://www.packer.io) definitions of various
 versions of openSUSE for running [Vagrant](https://www.vagrantup.com).
@@ -6,7 +6,7 @@ versions of openSUSE for running [Vagrant](https://www.vagrantup.com).
 
 ## Building
 
-* Install packer from the [website](http://www.packer.io)
+* Install Packer from the [website](http://www.packer.io)
 * ```packer build -parallel=false definitions/13.1-x86_64.json```
 * ```packer build -parallel=false definitions/13.1-i586.json```
 * ```packer build -parallel=false definitions/13.2-x86_64.json```
