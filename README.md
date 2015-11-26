@@ -4,51 +4,92 @@ This repository stores our [Packer](https://www.packer.io) definitions of variou
 versions of openSUSE for running [Vagrant](https://www.vagrantup.com).
 
 
-## Building
+## Tumbleweed
 
-* Install Packer from the [website](http://www.packer.io)
-* ```packer build -parallel=false definitions/13.1-x86_64.json```
-* ```packer build -parallel=false definitions/13.1-i586.json```
-* ```packer build -parallel=false definitions/13.2-x86_64.json```
-* ```packer build -parallel=false definitions/13.2-i586.json```
-* ```packer build -parallel=false definitions/tumbleweed-x86_64.json```
-* ```packer build -parallel=false definitions/tumbleweed-i586.json```
+### Building
+
+```bash
+packer build -parallel=false definitions/tumbleweed-x86_64.json
+packer build -parallel=false definitions/tumbleweed-i586.json
+```
+
+### Downloads
+
+* Virtualbox
+  [x86_64](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-virtualbox-x86_64-1.0.0.box)
+  [i586](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-virtualbox-i586-1.0.0.box)
+* Libvirt/KVM
+  [x86_64](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-libvirt-x86_64-1.0.0.box)
+  [i586](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-libvirt-i586-1.0.0.box)
+* Also available at Atlas
+  [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-Tumbleweed-x86_64)
+  [i586](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-Tumbleweed-i586)
 
 
-## Downloads
+## Leap
 
-* openSUSE Tumbleweed
-  * Virtualbox
-    [x86_64](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-virtualbox-x86_64-1.0.0.box)
-    [i586](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-virtualbox-i586-1.0.0.box)
-  * Libvirt/KVM
-    [x86_64](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-libvirt-x86_64-1.0.0.box)
-    [i586](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-libvirt-i586-1.0.0.box)
-  * Also available at Atlas
-    [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-Tumbleweed-x86_64)
-    [i586](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-Tumbleweed-i586)
+### Building
 
-* openSUSE 13.2
-  * Virtualbox
-    [x86_64](http://download.opensuse.org/vagrant/openSUSE-13.2-virtualbox-x86_64-1.0.0.box)
-    [i586](http://download.opensuse.org/vagrant/openSUSE-13.2-virtualbox-i586-1.0.0.box)
-  * Libvirt/KVM
-    [x86_64](http://download.opensuse.org/vagrant/openSUSE-13.2-libvirt-x86_64-1.0.0.box)
-    [i586](http://download.opensuse.org/vagrant/openSUSE-13.2-libvirt-i586-1.0.0.box)
-  * Also available at Atlas
-    [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-13.2-x86_64)
-    [i586](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-13.2-i586)
+```bash
+packer build -parallel=false definitions/42.1-x86_64.json
+packer build -parallel=false definitions/42.1-i586.json
+```
 
-* openSUSE 13.1
-  * Virtualbox
-    [x86_64](http://download.opensuse.org/vagrant/openSUSE-13.1-virtualbox-x86_64-1.0.0.box)
-    [i586](http://download.opensuse.org/vagrant/openSUSE-13.1-virtualbox-i586-1.0.0.box)
-  * Libvirt/KVM
-    [x86_64](http://download.opensuse.org/vagrant/openSUSE-13.1-libvirt-x86_64-1.0.0.box)
-    [i586](http://download.opensuse.org/vagrant/openSUSE-13.1-libvirt-i586-1.0.0.box)
-  * Also available at Atlas
-    [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-13.1-x86_64)
-    [i586](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-13.1-i586)
+### Downloads
+
+* Virtualbox
+  [x86_64](http://download.opensuse.org/vagrant/openSUSE-42.1-virtualbox-x86_64-1.0.0.box)
+  [i586](http://download.opensuse.org/vagrant/openSUSE-42.1-virtualbox-i586-1.0.0.box)
+* Libvirt/KVM
+  [x86_64](http://download.opensuse.org/vagrant/openSUSE-42.1-libvirt-x86_64-1.0.0.box)
+  [i586](http://download.opensuse.org/vagrant/openSUSE-42.1-libvirt-i586-1.0.0.box)
+* Also available at Atlas
+  [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-42.1-x86_64)
+  [i586](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-42.1-i586)
+
+
+## openSUSE 13.2
+
+### Building
+
+```bash
+packer build -parallel=false definitions/13.2-x86_64.json
+packer build -parallel=false definitions/13.2-i586.json
+```
+
+### Downloads
+
+* Virtualbox
+  [x86_64](http://download.opensuse.org/vagrant/openSUSE-13.2-virtualbox-x86_64-1.0.0.box)
+  [i586](http://download.opensuse.org/vagrant/openSUSE-13.2-virtualbox-i586-1.0.0.box)
+* Libvirt/KVM
+  [x86_64](http://download.opensuse.org/vagrant/openSUSE-13.2-libvirt-x86_64-1.0.0.box)
+  [i586](http://download.opensuse.org/vagrant/openSUSE-13.2-libvirt-i586-1.0.0.box)
+* Also available at Atlas
+  [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-13.2-x86_64)
+  [i586](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-13.2-i586)
+
+
+## openSUSE 13.1
+
+### Building
+
+```bash
+packer build -parallel=false definitions/13.1-x86_64.json
+packer build -parallel=false definitions/13.1-i586.json
+```
+
+### Downloads
+
+* Virtualbox
+  [x86_64](http://download.opensuse.org/vagrant/openSUSE-13.1-virtualbox-x86_64-1.0.0.box)
+  [i586](http://download.opensuse.org/vagrant/openSUSE-13.1-virtualbox-i586-1.0.0.box)
+* Libvirt/KVM
+  [x86_64](http://download.opensuse.org/vagrant/openSUSE-13.1-libvirt-x86_64-1.0.0.box)
+  [i586](http://download.opensuse.org/vagrant/openSUSE-13.1-libvirt-i586-1.0.0.box)
+* Also available at Atlas
+  [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-13.1-x86_64)
+  [i586](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-13.1-i586)
 
 
 ## License
