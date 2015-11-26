@@ -12,8 +12,8 @@
     <global>
       <append> resume=/dev/system/swap splash=silent quiet showopts</append>
       <append_failsafe>showopts apm=off noresume edd=off powersaved=off nohz=off highres=off processor.max_cstate=1 nomodeset x11failsafe</append_failsafe>
-      <default>openSUSE Tumbleweed</default>
-      <distributor>openSUSE Tumbleweed</distributor>
+      <default>openSUSE Leap</default>
+      <distributor>openSUSE Leap</distributor>
       <gfxbackground>/boot/grub2/themes/openSUSE/background.png</gfxbackground>
       <gfxmode>auto</gfxmode>
       <gfxtheme>/boot/grub2/themes/openSUSE/theme.txt</gfxtheme>
@@ -48,7 +48,7 @@
     </dhcp_options>
 
     <dns>
-      <hostname>vagrant-openSUSE-Tumbleweed</hostname>
+      <hostname>vagrant-openSUSE-Leap</hostname>
       <domain>vagrantup.com</domain>
 
       <resolv_conf_policy>auto</resolv_conf_policy>
