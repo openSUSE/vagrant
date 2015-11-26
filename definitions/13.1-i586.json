@@ -4,9 +4,9 @@
     "os": "13.1",
     "arch": "i586",
 
-    "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-DVD-i586.iso",
-    "iso_checksum": "1bd6223430910f6d5a168d4e19171462",
-    "iso_checksum_type": "md5",
+    "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-NET-i586.iso",
+    "iso_checksum": "4afd1bbb17efc95a1555d211bf5efe04abbb7202",
+    "iso_checksum_type": "sha1",
 
     "qemu_accelerator": "kvm"
   },
@@ -46,7 +46,6 @@
         "netsetup=dhcp ",
         "lang=en_US.utf8 ",
         "textmode=1 ",
-        "instmode=dvd ",
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/13.1-general.xml ",
         "<enter><wait>"
       ]
@@ -82,7 +81,6 @@
         "netsetup=dhcp ",
         "lang=en_US.utf8 ",
         "textmode=1 ",
-        "instmode=dvd ",
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/13.1-libvirt.xml ",
         "<enter><wait>"
       ]

@@ -4,9 +4,9 @@
     "os": "13.1",
     "arch": "x86_64",
 
-    "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-DVD-x86_64.iso",
+    "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-NET-x86_64.iso",
     "iso_checksum": "1096c9c67fc8a67a94a32d04a15e909d",
-    "iso_checksum_type": "md5",
+    "iso_checksum_type": "sha1",
 
     "qemu_accelerator": "kvm"
   },
@@ -46,7 +46,6 @@
         "netsetup=dhcp ",
         "lang=en_US.utf8 ",
         "textmode=1 ",
-        "instmode=dvd ",
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/13.1-general.xml ",
         "<enter><wait>"
       ]
@@ -82,7 +81,6 @@
         "netsetup=dhcp ",
         "lang=en_US.utf8 ",
         "textmode=1 ",
-        "instmode=dvd ",
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/13.1-libvirt.xml ",
         "<enter><wait>"
       ]

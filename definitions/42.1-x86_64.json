@@ -5,8 +5,8 @@
     "arch": "x86_64",
 
     "iso_url": "http://download.opensuse.org/distribution/leap/42.1/iso/openSUSE-Leap-42.1-NET-x86_64.iso",
-    "iso_checksum": "",
-    "iso_checksum_type": "md5",
+    "iso_checksum": "7667262584cc4936673578b5242efdff86cc1434ce60a25324faad7a2a36dbd7",
+    "iso_checksum_type": "sha256",
 
     "qemu_accelerator": "kvm"
   },
@@ -46,7 +46,6 @@
         "netsetup=dhcp ",
         "lang=en_US.utf8 ",
         "textmode=1 ",
-        "instmode=dvd ",
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.1-general.xml ",
         "<enter><wait>"
       ]
@@ -82,7 +81,6 @@
         "netsetup=dhcp ",
         "lang=en_US.utf8 ",
         "textmode=1 ",
-        "instmode=dvd ",
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.1-libvirt.xml ",
         "<enter><wait>"
       ]
