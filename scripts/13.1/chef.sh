@@ -5,6 +5,6 @@ rpm --import http://download.opensuse.org/repositories/systemsmanagement:/chef:/
 zypper addrepo -n 'Systemsmanagement Chef' http://download.opensuse.org/repositories/systemsmanagement:/chef:/12/openSUSE_13.1/ systemsmanagement-chef
 
 zypper --non-interactive --gpg-auto-import-keys in \
-  rubygem-chef
+  ruby2.0-rubygem-chef
 
 exit 0

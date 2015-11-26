@@ -1,10 +1,12 @@
 {
   "variables": {
     "version": "1.0.0",
-    "os": "Tumbleweed",
+    "os": "42.1",
     "arch": "x86_64",
 
-    "iso_url": "http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
+    "iso_url": "http://download.opensuse.org/distribution/leap/42.1/iso/openSUSE-Leap-42.1-NET-x86_64.iso",
+    "iso_checksum": "",
+    "iso_checksum_type": "md5",
 
     "qemu_accelerator": "kvm"
   },
@@ -14,7 +16,8 @@
       "type": "virtualbox-iso",
 
       "iso_url": "{{user `iso_url`}}",
-      "iso_checksum_type": "none",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
 
       "vm_name": "opensuse-{{user `os`}}-{{user `arch`}}",
       "guest_os_type": "OpenSUSE_64",
@@ -43,7 +46,8 @@
         "netsetup=dhcp ",
         "lang=en_US.utf8 ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/tumbleweed-general.xml ",
+        "instmode=dvd ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.1-general.xml ",
         "<enter><wait>"
       ]
     },
@@ -52,7 +56,8 @@
       "type": "qemu",
 
       "iso_url": "{{user `iso_url`}}",
-      "iso_checksum_type": "none",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
 
       "accelerator": "{{user `qemu_accelerator`}}",
       "disk_interface": "virtio",
@@ -77,7 +82,8 @@
         "netsetup=dhcp ",
         "lang=en_US.utf8 ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/tumbleweed-libvirt.xml ",
+        "instmode=dvd ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.1-libvirt.xml ",
         "<enter><wait>"
       ]
     }
@@ -97,12 +103,12 @@
       "scripts": [
         "scripts/base/wait.sh",
         "scripts/base/base.sh",
-        "scripts/tumbleweed/update.sh",
+        "scripts/42.1/update.sh",
         "scripts/base/vmtools.sh",
         "scripts/base/sshd.sh",
         "scripts/base/bindfs.sh",
-        "scripts/tumbleweed/puppet.sh",
-        "scripts/tumbleweed/chef.sh",
+        "scripts/42.1/puppet.sh",
+        "scripts/42.1/chef.sh",
         "scripts/base/vagrant.sh",
         "scripts/base/cleanup.sh",
         "scripts/base/zerodisk.sh"

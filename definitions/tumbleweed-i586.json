@@ -101,7 +101,7 @@
         "scripts/base/vmtools.sh",
         "scripts/base/sshd.sh",
         "scripts/base/bindfs.sh",
-        "scripts/base/puppet.sh",
+        "scripts/tumbleweed/puppet.sh",
         "scripts/tumbleweed/chef.sh",
         "scripts/base/vagrant.sh",
         "scripts/base/cleanup.sh",

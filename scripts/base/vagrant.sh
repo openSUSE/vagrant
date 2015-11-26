@@ -15,7 +15,7 @@ chown -R vagrant /vagrant
 
 if [ -d /etc/sudoers.d ]
 then
-  echo "vagrant ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/vagrant
+  echo "vagrant ALL=(ALL) NOPASSWD: ALL" >| /etc/sudoers.d/vagrant
   chmod 0440 /etc/sudoers.d/vagrant
 else
   echo "vagrant ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
