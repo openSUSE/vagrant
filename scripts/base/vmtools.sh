@@ -15,6 +15,7 @@ case "$PACKER_BUILDER_TYPE" in
 
   virtualbox-iso|virtualbox-ovf)
     zypper --non-interactive --gpg-auto-import-keys in \
+      --auto-agree-with-licenses \
       virtualbox-guest-tools \
       virtualbox-guest-x11 \
       virtualbox-guest-kmp-default
