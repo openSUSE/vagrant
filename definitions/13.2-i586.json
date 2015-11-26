@@ -4,9 +4,9 @@
     "os": "13.2",
     "arch": "i586",
 
-    "iso_url": "http://download.opensuse.org/distribution/13.2/iso/openSUSE-13.2-NET-i586.iso",
-    "iso_checksum": "84278b9585b77ff68deae6257de25f0bfaabf91d3b6cbdcffa7429d037d8011d",
-    "iso_checksum_type": "sha256",
+    "iso_url": "http://download.opensuse.org/distribution/13.2/iso/openSUSE-13.2-DVD-i586.iso",
+    "iso_checksum": "2ec28606829d6408efc5a79b70d1da738fdc09de",
+    "iso_checksum_type": "sha1",
 
     "qemu_accelerator": "kvm",
 
@@ -111,7 +111,7 @@
         "scripts/base/sshd.sh",
         "scripts/base/bindfs.sh",
         "scripts/13.2/puppet.sh",
-        "scripts/base/chef.sh",
+        "scripts/13.2/chef.sh",
         "scripts/base/vagrant.sh",
         "scripts/base/cleanup.sh",
         "scripts/base/zerodisk.sh"

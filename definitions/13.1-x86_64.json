@@ -4,8 +4,8 @@
     "os": "13.1",
     "arch": "x86_64",
 
-    "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-NET-x86_64.iso",
-    "iso_checksum": "1096c9c67fc8a67a94a32d04a15e909d",
+    "iso_url": "http://download.opensuse.org/distribution/13.1/iso/openSUSE-13.1-DVD-x86_64.iso",
+    "iso_checksum": "0b8c40a36ff514797cb2ef69331f1c3c8a9ec6ca",
     "iso_checksum_type": "sha1",
 
     "qemu_accelerator": "kvm",
@@ -111,7 +111,7 @@
         "scripts/base/sshd.sh",
         "scripts/base/bindfs.sh",
         "scripts/13.1/puppet.sh",
-        "scripts/base/chef.sh",
+        "scripts/13.1/chef.sh",
         "scripts/base/vagrant.sh",
         "scripts/base/cleanup.sh",
         "scripts/base/zerodisk.sh"
