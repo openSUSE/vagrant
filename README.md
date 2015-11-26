@@ -10,20 +10,16 @@ versions of openSUSE for running [Vagrant](https://www.vagrantup.com).
 
 ```bash
 packer build -parallel=false definitions/tumbleweed-x86_64.json
-packer build -parallel=false definitions/tumbleweed-i586.json
 ```
 
 ### Downloads
 
 * Virtualbox
   [x86_64](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-virtualbox-x86_64-1.0.0.box)
-  [i586](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-virtualbox-i586-1.0.0.box)
 * Libvirt/KVM
   [x86_64](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-libvirt-x86_64-1.0.0.box)
-  [i586](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-libvirt-i586-1.0.0.box)
 * Also available at Atlas
   [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-Tumbleweed-x86_64)
-  [i586](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-Tumbleweed-i586)
 
 
 ## Leap
@@ -32,20 +28,16 @@ packer build -parallel=false definitions/tumbleweed-i586.json
 
 ```bash
 packer build -parallel=false definitions/42.1-x86_64.json
-packer build -parallel=false definitions/42.1-i586.json
 ```
 
 ### Downloads
 
 * Virtualbox
   [x86_64](http://download.opensuse.org/vagrant/openSUSE-42.1-virtualbox-x86_64-1.0.0.box)
-  [i586](http://download.opensuse.org/vagrant/openSUSE-42.1-virtualbox-i586-1.0.0.box)
 * Libvirt/KVM
   [x86_64](http://download.opensuse.org/vagrant/openSUSE-42.1-libvirt-x86_64-1.0.0.box)
-  [i586](http://download.opensuse.org/vagrant/openSUSE-42.1-libvirt-i586-1.0.0.box)
 * Also available at Atlas
   [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-42.1-x86_64)
-  [i586](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-42.1-i586)
 
 
 ## openSUSE 13.2
