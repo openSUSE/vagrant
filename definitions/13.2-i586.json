@@ -8,7 +8,10 @@
     "iso_checksum": "84278b9585b77ff68deae6257de25f0bfaabf91d3b6cbdcffa7429d037d8011d",
     "iso_checksum_type": "sha256",
 
-    "qemu_accelerator": "kvm"
+    "qemu_accelerator": "kvm",
+
+    "memory": "1024",
+    "cpus": "1"
   },
   "builders": [
     {
@@ -25,8 +28,8 @@
       "hard_drive_interface": "sata",
 
       "vboxmanage": [
-        ["modifyvm", "{{.Name}}", "--memory", "512"],
-        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+        ["modifyvm", "{{.Name}}", "--memory", "{{user `memory`}}"],
+        ["modifyvm", "{{.Name}}", "--cpus", "{{user `cpus`}}"]
       ],
 
       "output_directory": "images/openSUSE-{{user `os`}}-virtualbox-{{user `arch`}}-{{user `version`}}",
