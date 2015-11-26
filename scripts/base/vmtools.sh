@@ -14,11 +14,10 @@ case "$PACKER_BUILDER_TYPE" in
     ;;
 
   virtualbox-iso|virtualbox-ovf)
-    mount -o loop /home/vagrant/VBoxGuestAdditions.iso /mnt
-    /mnt/VBoxLinuxAdditions.run --nox11
-    umount /mnt
-
-    rm -f /home/vagrant/VBoxGuestAdditions.iso
+    zypper --non-interactive --gpg-auto-import-keys in \
+      virtualbox-guest-tools \
+      virtualbox-guest-x11 \
+      virtualbox-guest-kmp-default
     ;;
 esac
 

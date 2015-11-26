@@ -21,7 +21,7 @@
 
       "vm_name": "opensuse-{{user `os`}}-{{user `arch`}}",
       "guest_os_type": "OpenSUSE_64",
-      "guest_additions_mode": "upload",
+      "guest_additions_mode": "disable",
       "hard_drive_interface": "sata",
 
       "vboxmanage": [
@@ -32,6 +32,7 @@
       "output_directory": "images/openSUSE-{{user `os`}}-virtualbox-{{user `arch`}}-{{user `version`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
+      "ssh_wait_timeout": "1000s",
       "disk_size": 20480,
       "ssh_port": 22,
       "headless": false,
@@ -66,6 +67,7 @@
       "output_directory": "images/openSUSE-{{user `os`}}-libvirt-{{user `arch`}}-{{user `version`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
+      "ssh_wait_timeout": "1000s",
       "disk_size": 20480,
       "ssh_port": 22,
       "headless": false,
@@ -105,7 +107,7 @@
         "scripts/base/sshd.sh",
         "scripts/base/bindfs.sh",
         "scripts/tumbleweed/puppet.sh",
-        "scripts/tumbleweed/chef.sh",
+        "scripts/base/chef.sh",
         "scripts/base/vagrant.sh",
         "scripts/base/cleanup.sh",
         "scripts/base/zerodisk.sh"
