@@ -6,13 +6,13 @@ versions of openSUSE for running [Vagrant](https://www.vagrantup.com).
 
 ## Tumbleweed
 
-### Building
+**Building**
 
 ```bash
 packer build -parallel=false definitions/tumbleweed-x86_64.json
 ```
 
-### Downloads
+**Downloads**
 
 * Virtualbox
   [x86_64](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-virtualbox-x86_64-1.0.0.box)
@@ -24,13 +24,13 @@ packer build -parallel=false definitions/tumbleweed-x86_64.json
 
 ## Leap
 
-### Building
+**Building**
 
 ```bash
 packer build -parallel=false definitions/42.1-x86_64.json
 ```
 
-### Downloads
+**Downloads**
 
 * Virtualbox
   [x86_64](http://download.opensuse.org/vagrant/openSUSE-42.1-virtualbox-x86_64-1.0.0.box)
@@ -42,14 +42,14 @@ packer build -parallel=false definitions/42.1-x86_64.json
 
 ## openSUSE 13.2
 
-### Building
+**Building**
 
 ```bash
 packer build -parallel=false definitions/13.2-x86_64.json
 packer build -parallel=false definitions/13.2-i586.json
 ```
 
-### Downloads
+**Downloads**
 
 * Virtualbox
   [x86_64](http://download.opensuse.org/vagrant/openSUSE-13.2-virtualbox-x86_64-1.0.0.box)
@@ -64,14 +64,14 @@ packer build -parallel=false definitions/13.2-i586.json
 
 ## openSUSE 13.1
 
-### Building
+**Building**
 
 ```bash
 packer build -parallel=false definitions/13.1-x86_64.json
 packer build -parallel=false definitions/13.1-i586.json
 ```
 
-### Downloads
+**Downloads**
 
 * Virtualbox
   [x86_64](http://download.opensuse.org/vagrant/openSUSE-13.1-virtualbox-x86_64-1.0.0.box)
