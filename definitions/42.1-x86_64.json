@@ -88,6 +88,10 @@
         "textmode=1 ",
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.1-libvirt.xml ",
         "<enter><wait>"
+      ],
+
+      "qemuargs": [
+        [ "-m", "{{user `memory`}}M" ]
       ]
     }
   ],

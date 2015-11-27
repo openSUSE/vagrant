@@ -84,6 +84,10 @@
         "textmode=1 ",
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/tumbleweed-libvirt.xml ",
         "<enter><wait>"
+      ],
+
+      "qemuargs": [
+        [ "-m", "{{user `memory`}}M" ]
       ]
     }
   ],
