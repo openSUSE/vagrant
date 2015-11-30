@@ -5,6 +5,8 @@
     "arch": "x86_64",
 
     "iso_url": "http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
+    "iso_checksum": "",
+    "iso_checksum_type": "none",
 
     "qemu_accelerator": "kvm",
 
@@ -17,7 +19,8 @@
       "type": "virtualbox-iso",
 
       "iso_url": "{{user `iso_url`}}",
-      "iso_checksum_type": "none",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
 
       "vm_name": "opensuse-{{user `os`}}-{{user `arch`}}",
       "guest_os_type": "OpenSUSE_64",
@@ -56,7 +59,8 @@
       "type": "qemu",
 
       "iso_url": "{{user `iso_url`}}",
-      "iso_checksum_type": "none",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
 
       "accelerator": "{{user `qemu_accelerator`}}",
       "disk_interface": "virtio",
