@@ -5,8 +5,8 @@
     "arch": "i586",
 
     "iso_url": "http://download.opensuse.org/distribution/13.2/iso/openSUSE-13.2-DVD-i586.iso",
-    "iso_checksum": "2ec28606829d6408efc5a79b70d1da738fdc09de",
-    "iso_checksum_type": "sha1",
+    "iso_checksum": "bada6d5b304a9ecbb9b27e0a02d0c347c72d91c32231c2594e4deb11a4d9ce55",
+    "iso_checksum_type": "sha256",
 
     "qemu_accelerator": "kvm",
 

@@ -91,4 +91,6 @@ MIT
 
 ## Copyright
 
+```
 Copyright (c) 2015 The openSUSE Project <http://www.opensuse.org>
+```

@@ -1,6 +1,11 @@
 # Changelog
 
 
+## 2015-11-30
+
+* Changed checksums for 13.2 to sha256
+
+
 ## 2015-11-26
 
 * Restructured README

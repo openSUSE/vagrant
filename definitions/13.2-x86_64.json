@@ -5,8 +5,8 @@
     "arch": "x86_64",
 
     "iso_url": "http://download.opensuse.org/distribution/13.2/iso/openSUSE-13.2-DVD-x86_64.iso",
-    "iso_checksum": "a1bd237ccfb07939953a9681607c99c00bc78d5d",
-    "iso_checksum_type": "sha1",
+    "iso_checksum": "787b0a600e8304a9dda12a4f7ff89a08c9fc4b445215b9f91c52628eccdc3c40",
+    "iso_checksum_type": "sha256",
 
     "qemu_accelerator": "kvm",
 
