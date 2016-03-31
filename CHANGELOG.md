@@ -1,6 +1,11 @@
 # Changelog
 
 
+## 2016-03-31
+
+* Added current Tumbleweed version to variables
+
+
 ## 2015-11-30
 
 * Changed checksums for 13.2 to sha256
