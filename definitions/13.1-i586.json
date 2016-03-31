@@ -99,8 +99,8 @@
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
 
       "vm_name": "opensuse-{{user `os`}}-{{user `arch`}}",
-      "guest_os_type": "OpenSUSE",
-      "guest_additions_mode": "mac",
+      "guest_os_type": "opensuse",
+      "parallels_tools_flavor": "lin",
       "hard_drive_interface": "sata",
 
       "prlctl": [
