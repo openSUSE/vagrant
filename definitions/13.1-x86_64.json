@@ -177,7 +177,7 @@
       "keep_input_artifact": false,
       "output": "images/openSUSE-{{user `os`}}-{{.Provider}}-{{user `arch`}}-{{user `version`}}.box",
       "type": "vagrant",
-      "only": ["virtualbox", "libvirt"]
+      "only": ["virtualbox", "libvirt", "parallels", "vmware"]
     }
   ],
   "provisioners": [
