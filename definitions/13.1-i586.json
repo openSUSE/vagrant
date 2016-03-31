@@ -89,7 +89,47 @@
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/13.1-libvirt.xml ",
         "<enter><wait>"
       ]
-    }
+    },
+    {
+      "name": "parallels",
+      "type": "parallels-iso",
+
+      "iso_url": "{{user `iso_url`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+
+      "vm_name": "opensuse-{{user `os`}}-{{user `arch`}}",
+      "guest_os_type": "OpenSUSE",
+      "guest_additions_mode": "mac",
+      "hard_drive_interface": "sata",
+
+      "prlctl": [
+        ["set", "{{.Name}}", "--memsize", "{{user `memory`}}"],
+        ["set", "{{.Name}}", "--cpus", "{{user `cpus`}}"]
+      ],
+
+      "output_directory": "images/openSUSE-{{user `os`}}-parallels-{{user `arch`}}-{{user `version`}}",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "1000s",
+      "disk_size": 20480,
+      "ssh_port": 22,
+      "headless": false,
+      "http_directory": "http",
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -p",
+      "boot_command": [
+        "<esc><enter><wait>",
+        "linux ",
+        "biosdevname=0 ",
+        "net.ifnames=0 ",
+        "netdevice=eth0 ",
+        "netsetup=dhcp ",
+        "lang=en_US.utf8 ",
+        "textmode=1 ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/13.1-general.xml ",
+        "<enter><wait>"
+      ]
+    },
   ],
   "post-processors": [
     {

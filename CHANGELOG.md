@@ -4,6 +4,7 @@
 ## 2016-03-31
 
 * Added current Tumbleweed version to variables
+* Added inital support for parallels desktop
 
 
 ## 2015-11-30
