@@ -133,7 +133,7 @@
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/tumbleweed-general.xml ",
         "<enter><wait>"
       ]
-    },
+    }
   ],
   "post-processors": [
     {

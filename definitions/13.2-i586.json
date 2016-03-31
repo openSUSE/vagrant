@@ -133,7 +133,7 @@
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/13.2-general.xml ",
         "<enter><wait>"
       ]
-    },
+    }
   ],
   "post-processors": [
     {
