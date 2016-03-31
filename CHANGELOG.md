@@ -5,6 +5,7 @@
 
 * Added current Tumbleweed version to variables
 * Added inital support for parallels desktop
+* Added inital support for vmware fusion/workstation
 
 
 ## 2015-11-30
