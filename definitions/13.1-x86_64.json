@@ -114,7 +114,6 @@
       "ssh_wait_timeout": "1000s",
       "disk_size": 20480,
       "ssh_port": 22,
-      "headless": false,
       "http_directory": "http",
       "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -p",
       "boot_command": [
