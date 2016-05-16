@@ -19,6 +19,7 @@ case "$PACKER_BUILDER_TYPE" in
       virtualbox-guest-tools \
       virtualbox-guest-x11 \
       virtualbox-guest-kmp-default
+    echo vboxsf >/etc/modules-load.d/vboxsf.conf
     ;;
 esac
 
