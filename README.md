@@ -9,7 +9,10 @@ versions of openSUSE for running [Vagrant](https://www.vagrantup.com).
 **Building**
 
 ```bash
-packer build -parallel=false -var iso_url=URL -var iso_checksum=CHECKSUM definitions/tumbleweed-x86_64.json
+packer build -parallel=false \
+  -var iso_url=http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot20160529-Media.iso \
+  -var iso_checksum=324a29b9e1cb5fd3f3fb92a65681939fff66ec6cd735aeff555a2bd7d4d495f0 \
+  definitions/tumbleweed-x86_64.json
 ```
 
 **Downloads**
