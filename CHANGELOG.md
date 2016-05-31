@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-05-31
+
+* Fixed loading of vboxfs module
+
 
 ## 2016-03-31
 
