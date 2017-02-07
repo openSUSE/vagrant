@@ -21,7 +21,4 @@ else
   echo "vagrant ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 fi
 
-groupadd vagrant
-usermod -aG vagrant vagrant
-
 exit 0
