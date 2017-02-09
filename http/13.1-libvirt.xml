@@ -176,6 +176,16 @@
     </chroot-scripts>
   </scripts>
 
+  <groups config:type="list">
+    <group>
+      <encrypted config:type="boolean">true</encrypted>
+      <gid>1000</gid>
+      <group_password>x</group_password>
+      <groupname>vagrant</groupname>
+      <userlist>vagrant</userlist>
+    </group>
+  </groups>
+
   <users config:type="list">
     <user>
       <username>root</username>
