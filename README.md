@@ -21,8 +21,6 @@ packer build -parallel=false \
   [x86_64](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-virtualbox-x86_64-1.0.1.box)
 * Libvirt/KVM
   [x86_64](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-libvirt-x86_64-1.0.1.box)
-* VMware
-  [x86_64](http://download.opensuse.org/vagrant/openSUSE-Tumbleweed-vmware-x86_64-1.0.1.box)
 * Also available at Atlas
   [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-Tumbleweed-x86_64)
 
@@ -37,13 +35,7 @@ packer build -parallel=false definitions/42.2-x86_64.json
 
 **Downloads**
 
-* Virtualbox
-  [x86_64](http://download.opensuse.org/vagrant/openSUSE-42.2-virtualbox-x86_64-1.0.1.box)
-* Libvirt/KVM
-  [x86_64](http://download.opensuse.org/vagrant/openSUSE-42.2-libvirt-x86_64-1.0.1.box)
-* VMware
-  [x86_64](http://download.opensuse.org/vagrant/openSUSE-42.2-vmware-x86_64-1.0.1.box)
-* Also available at Atlas
+* Available at Atlas
   [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-42.2-x86_64)
 
 
