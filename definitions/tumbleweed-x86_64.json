@@ -1,10 +1,10 @@
 {
   "variables": {
-    "version": "1.0.2",
+    "version": "1.0.3",
     "os": "Tumbleweed",
     "arch": "x86_64",
 
-    "iso_url": "http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot20160329-Media.iso",
+    "iso_url": "http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot201.0.39-Media.iso",
     "iso_checksum": "802226e67f45d65ad0040d87a785b608011677d40f5109b158b63f8875a78c11",
     "iso_checksum_type": "sha256",
 
@@ -38,7 +38,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "2h",
-      "disk_size": 20480,
+      "disk_size": 40960,
       "ssh_port": 22,
       "headless": false,
       "http_directory": "http",
@@ -74,7 +74,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "2h",
-      "disk_size": 20480,
+      "disk_size": 40960,
       "ssh_port": 22,
       "headless": false,
       "http_directory": "http",
@@ -118,7 +118,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "2h",
-      "disk_size": 20480,
+      "disk_size": 40960,
       "ssh_port": 22,
       "http_directory": "http",
       "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -p",
@@ -157,7 +157,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "2h",
-      "disk_size": 20480,
+      "disk_size": 40960,
       "ssh_port": 22,
       "headless": false,
       "http_directory": "http",
