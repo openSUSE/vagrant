@@ -1,11 +1,11 @@
 {
   "variables": {
     "version": "1.0.4",
-    "os": "42.2",
+    "os": "42.3",
     "arch": "x86_64",
 
-    "iso_url": "http://download.opensuse.org/distribution/leap/42.2/iso/openSUSE-Leap-42.2-NET-x86_64.iso",
-    "iso_checksum": "750434ff041b9e7baf31217fcfab41df0560e8e8a39d508c196eb19c151f265c",
+    "iso_url": "http://download.opensuse.org/distribution/leap/42.3/iso/openSUSE-Leap-42.3-NET-x86_64.iso",
+    "iso_checksum": "d1a17116cf33a5582b83ef479d7b151b33938e60f07eebc544abf162e2aa5c12",
     "iso_checksum_type": "sha256",
 
     "qemu_accelerator": "kvm",
@@ -191,12 +191,10 @@
       "scripts": [
         "scripts/base/wait.sh",
         "scripts/base/base.sh",
-        "scripts/42.2/update.sh",
+        "scripts/42.3/update.sh",
         "scripts/base/vmtools.sh",
         "scripts/base/sshd.sh",
         "scripts/base/bindfs.sh",
-        "scripts/42.2/puppet.sh",
-        "scripts/42.2/chef.sh",
         "scripts/base/vagrant.sh",
         "scripts/base/cleanup.sh",
         "scripts/base/zerodisk.sh"
