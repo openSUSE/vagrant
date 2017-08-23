@@ -25,6 +25,20 @@ packer build -parallel=false \
   [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-Tumbleweed-x86_64)
 
 
+## Leap 42.3
+
+**Building**
+
+```bash
+packer build -parallel=false definitions/42.3-x86_64.json
+```
+
+**Downloads**
+
+* Available at Atlas
+  [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-42.3-x86_64)
+
+
 ## Leap 42.2
 
 **Building**
