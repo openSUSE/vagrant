@@ -39,4 +39,7 @@ EOF
 chmod a+x /etc/init.d/ssh_gen_host_keys
 chkconfig ssh_gen_host_keys on
 
+# bsc#1039656 Bring back the good /etc/hosts if Yast2 cleared it
+[[ -e /etc/hosts.YaST2save ]] && mv /etc/hosts.YaST2save /etc/hosts
+
 exit 0
