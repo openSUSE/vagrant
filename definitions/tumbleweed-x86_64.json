@@ -4,8 +4,8 @@
     "os": "Tumbleweed",
     "arch": "x86_64",
 
-    "iso_url": "http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot20160329-Media.iso",
-    "iso_checksum": "802226e67f45d65ad0040d87a785b608011677d40f5109b158b63f8875a78c11",
+    "iso_url": "http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot20170927-Media.iso",
+    "iso_checksum": "2c9041138c23f83a985aa39016e600a804690acdf9fa8fc8d30cb106639b0833",
     "iso_checksum_type": "sha256",
 
     "qemu_accelerator": "kvm",
@@ -37,7 +37,7 @@
       "output_directory": "images/openSUSE-{{user `os`}}-virtualbox-{{user `arch`}}-{{user `version`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "2h",
+      "ssh_wait_timeout": "60m",
       "disk_size": 40960,
       "ssh_port": 22,
       "headless": false,
@@ -50,7 +50,7 @@
         "net.ifnames=0 ",
         "netdevice=eth0 ",
         "netsetup=dhcp ",
-        "lang=en_US.utf8 ",
+        "lang=en_US ",
         "textmode=1 ",
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/tumbleweed-general.xml ",
         "<enter><wait>"
@@ -73,7 +73,7 @@
       "output_directory": "images/openSUSE-{{user `os`}}-libvirt-{{user `arch`}}-{{user `version`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "2h",
+      "ssh_wait_timeout": "60m",
       "disk_size": 40960,
       "ssh_port": 22,
       "headless": false,
@@ -86,7 +86,7 @@
         "net.ifnames=0 ",
         "netdevice=eth0 ",
         "netsetup=dhcp ",
-        "lang=en_US.utf8 ",
+        "lang=en_US ",
         "textmode=1 ",
         "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/tumbleweed-libvirt.xml ",
         "<enter><wait>"
