@@ -1,6 +1,6 @@
 {
   "variables": {
-    "version": "1.0.4",
+    "version": "1.0.5",
     "os": "42.3",
     "arch": "x86_64",
 
@@ -52,7 +52,7 @@
         "netsetup=dhcp ",
         "lang=en_US ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.2-general.xml ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.3-general.xml ",
         "<enter><wait>"
       ]
     },
@@ -88,7 +88,7 @@
         "netsetup=dhcp ",
         "lang=en_US ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.2-libvirt.xml ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.3-libvirt.xml ",
         "<enter><wait>"
       ],
 
@@ -131,7 +131,7 @@
         "netsetup=dhcp ",
         "lang=en_US ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.2-general.xml ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.3-general.xml ",
         "<enter><wait>"
       ]
     },
@@ -171,7 +171,7 @@
         "netsetup=dhcp ",
         "lang=en_US ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.2-general.xml ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.3-general.xml ",
         "<enter><wait>"
       ]
     }
