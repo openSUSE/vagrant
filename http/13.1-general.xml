@@ -103,7 +103,7 @@
 
   <software>
     <do_online_update config:type="boolean">false</do_online_update>
-    <install_recommended config:type="boolean">true</install_recommended>
+    <install_recommended config:type="boolean">false</install_recommended>
 
     <kernel>kernel-default</kernel>
 
