@@ -114,6 +114,7 @@
     </patterns>
 
     <packages config:type="list">
+      <package>ca-certificates-mozilla</package>
       <package>curl</package>
       <package>dhcp</package>
       <package>dhcp-client</package>
@@ -123,6 +124,7 @@
       <package>kernel-devel</package>
       <package>less</package>
       <package>make</package>
+      <package>python-xml</package>
       <package>sudo</package>
       <package>vim</package>
       <package>wget</package>
