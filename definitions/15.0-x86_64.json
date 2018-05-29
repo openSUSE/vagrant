@@ -1,11 +1,11 @@
 {
   "variables": {
     "version": "1.0.6",
-    "os": "Tumbleweed",
+    "os": "15.0",
     "arch": "x86_64",
 
-    "iso_url": "http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot20170927-Media.iso",
-    "iso_checksum": "2c9041138c23f83a985aa39016e600a804690acdf9fa8fc8d30cb106639b0833",
+    "iso_url": "http://download.opensuse.org/distribution/leap/15.0/iso/openSUSE-Leap-15.0-NET-x86_64.iso",
+    "iso_checksum": "1a322de7c215da96fdbad4c247d218eb79073c5620a332a759c0291b44746fbc",
     "iso_checksum_type": "sha256",
 
     "qemu_accelerator": "kvm",
@@ -38,6 +38,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "60m",
+      "ssh_handshake_attempts": "120",
       "disk_size": 40960,
       "ssh_port": 22,
       "headless": false,
@@ -52,7 +53,7 @@
         "netsetup=dhcp ",
         "lang=en_US ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/tumbleweed-general.xml ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/15.0-general.xml ",
         "<enter><wait>"
       ]
     },
@@ -74,6 +75,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "60m",
+      "ssh_handshake_attempts": "120",
       "disk_size": 40960,
       "ssh_port": 22,
       "headless": false,
@@ -88,7 +90,8 @@
         "netsetup=dhcp ",
         "lang=en_US ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/tumbleweed-libvirt.xml ",
+        "showopts ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/15.0-libvirt.xml ",
         "<enter><wait>"
       ],
 
@@ -117,7 +120,8 @@
       "output_directory": "images/openSUSE-{{user `os`}}-parallels-{{user `arch`}}-{{user `version`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "2h",
+      "ssh_wait_timeout": "60m",
+      "ssh_handshake_attempts": "120",
       "disk_size": 40960,
       "ssh_port": 22,
       "http_directory": "http",
@@ -129,9 +133,9 @@
         "net.ifnames=0 ",
         "netdevice=eth0 ",
         "netsetup=dhcp ",
-        "lang=en_US.utf8 ",
+        "lang=en_US ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/tumbleweed-general.xml ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/15.0-general.xml ",
         "<enter><wait>"
       ]
     },
@@ -156,7 +160,8 @@
       "output_directory": "images/openSUSE-{{user `os`}}-vmware-{{user `arch`}}-{{user `version`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "2h",
+      "ssh_wait_timeout": "60m",
+      "ssh_handshake_attempts": "120",
       "disk_size": 40960,
       "ssh_port": 22,
       "headless": false,
@@ -169,9 +174,9 @@
         "net.ifnames=0 ",
         "netdevice=eth0 ",
         "netsetup=dhcp ",
-        "lang=en_US.utf8 ",
+        "lang=en_US ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/tumbleweed-general.xml ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/15.0-general.xml ",
         "<enter><wait>"
       ]
     }
@@ -191,12 +196,10 @@
       "scripts": [
         "scripts/base/wait.sh",
         "scripts/base/base.sh",
-        "scripts/tumbleweed/update.sh",
+        "scripts/15.0/update.sh",
         "scripts/base/vmtools.sh",
         "scripts/base/sshd.sh",
         "scripts/base/bindfs.sh",
-        "scripts/tumbleweed/puppet.sh",
-        "scripts/tumbleweed/chef.sh",
         "scripts/base/vagrant.sh",
         "scripts/base/cleanup.sh",
         "scripts/base/zerodisk.sh"
