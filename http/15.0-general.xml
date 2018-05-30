@@ -10,10 +10,10 @@
 
   <bootloader>
     <global>
-      <append> resume=/dev/system/swap splash=silent quiet showopts</append>
+      <append> resume=/dev/sda1 splash=silent quiet showopts</append>
       <append_failsafe>showopts apm=off noresume edd=off powersaved=off nohz=off highres=off processor.max_cstate=1 nomodeset x11failsafe</append_failsafe>
-      <default>openSUSE 13.1</default>
-      <distributor>openSUSE 13.1</distributor>
+      <default>openSUSE Leap 15.0</default>
+      <distributor>openSUSE Leap 15.0</distributor>
       <gfxbackground>/boot/grub2/themes/openSUSE/background.png</gfxbackground>
       <gfxmode>auto</gfxmode>
       <gfxtheme>/boot/grub2/themes/openSUSE/theme.txt</gfxtheme>
@@ -48,7 +48,7 @@
     </dhcp_options>
 
     <dns>
-      <hostname>vagrant-openSUSE-Bottle</hostname>
+      <hostname>vagrant-openSUSE-Leap</hostname>
       <domain>vagrantup.com</domain>
 
       <resolv_conf_policy>auto</resolv_conf_policy>
@@ -102,7 +102,6 @@
   </report>
 
   <software>
-    <do_online_update config:type="boolean">false</do_online_update>
     <install_recommended config:type="boolean">false</install_recommended>
 
     <kernel>kernel-default</kernel>
@@ -112,21 +111,21 @@
       <pattern>sw_management</pattern>
       <pattern>yast2_basis</pattern>
     </patterns>
-
+    <products config:type="list">
+      <product>openSUSE</product>
+    </products>
     <packages config:type="list">
+      <package>ca-certificates-mozilla</package>
       <package>curl</package>
       <package>dhcp</package>
       <package>dhcp-client</package>
-      <package>gcc</package>
-      <package>git</package>
       <package>grub2</package>
-      <package>kernel-devel</package>
       <package>less</package>
       <package>make</package>
+      <package>python-xml</package>
       <package>sudo</package>
       <package>vim</package>
       <package>wget</package>
-      <package>yast2-runlevel</package>
     </packages>
   </software>
 
@@ -139,16 +138,15 @@
     <image_installation config:type="boolean">false</image_installation>
   </deploy_image>
 
-  <runlevel>
-    <default>3</default>
+  <services-manager>
+    <default_target>multi-user</default_target>
 
-    <services config:type="list">
-      <service>
-        <service_name>sshd</service_name>
-        <service_status>enable</service_status>
-      </service>
+    <services>
+      <enable config:type="list">
+        <service>sshd</service>
+      </enable>
     </services>
-  </runlevel>
+  </services-manager>
 
   <scripts>
     <chroot-scripts config:type="list">

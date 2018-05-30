@@ -1,11 +1,11 @@
 {
   "variables": {
-    "version": "1.0.5",
-    "os": "42.2",
+    "version": "1.0.6",
+    "os": "15.0",
     "arch": "x86_64",
 
-    "iso_url": "http://download.opensuse.org/distribution/leap/42.2/iso/openSUSE-Leap-42.2-NET-x86_64.iso",
-    "iso_checksum": "750434ff041b9e7baf31217fcfab41df0560e8e8a39d508c196eb19c151f265c",
+    "iso_url": "http://download.opensuse.org/distribution/leap/15.0/iso/openSUSE-Leap-15.0-NET-x86_64.iso",
+    "iso_checksum": "1a322de7c215da96fdbad4c247d218eb79073c5620a332a759c0291b44746fbc",
     "iso_checksum_type": "sha256",
 
     "qemu_accelerator": "kvm",
@@ -38,6 +38,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "60m",
+      "ssh_handshake_attempts": "120",
       "disk_size": 40960,
       "ssh_port": 22,
       "headless": false,
@@ -52,7 +53,7 @@
         "netsetup=dhcp ",
         "lang=en_US ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.2-general.xml ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/15.0-general.xml ",
         "<enter><wait>"
       ]
     },
@@ -74,6 +75,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "60m",
+      "ssh_handshake_attempts": "120",
       "disk_size": 40960,
       "ssh_port": 22,
       "headless": false,
@@ -88,7 +90,8 @@
         "netsetup=dhcp ",
         "lang=en_US ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.2-libvirt.xml ",
+        "showopts ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/15.0-libvirt.xml ",
         "<enter><wait>"
       ],
 
@@ -118,6 +121,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "60m",
+      "ssh_handshake_attempts": "120",
       "disk_size": 40960,
       "ssh_port": 22,
       "http_directory": "http",
@@ -131,7 +135,7 @@
         "netsetup=dhcp ",
         "lang=en_US ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.2-general.xml ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/15.0-general.xml ",
         "<enter><wait>"
       ]
     },
@@ -157,6 +161,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "60m",
+      "ssh_handshake_attempts": "120",
       "disk_size": 40960,
       "ssh_port": 22,
       "headless": false,
@@ -171,7 +176,7 @@
         "netsetup=dhcp ",
         "lang=en_US ",
         "textmode=1 ",
-        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/42.2-general.xml ",
+        "autoyast=http://{{.HTTPIP}}:{{.HTTPPort}}/15.0-general.xml ",
         "<enter><wait>"
       ]
     }
@@ -191,12 +196,10 @@
       "scripts": [
         "scripts/base/wait.sh",
         "scripts/base/base.sh",
-        "scripts/42.2/update.sh",
+        "scripts/15.0/update.sh",
         "scripts/base/vmtools.sh",
         "scripts/base/sshd.sh",
         "scripts/base/bindfs.sh",
-        "scripts/42.2/puppet.sh",
-        "scripts/42.2/chef.sh",
         "scripts/base/vagrant.sh",
         "scripts/base/cleanup.sh",
         "scripts/base/zerodisk.sh"
