@@ -13,6 +13,8 @@
     "memory": "1024",
     "cpus": "1",
 
+    "headless": "false",
+
     "fusion_path": "/Applications/VMware Fusion.app"
   },
   "builders": [
@@ -41,7 +43,7 @@
       "ssh_handshake_attempts": "120",
       "disk_size": 40960,
       "ssh_port": 22,
-      "headless": false,
+      "headless": "{{user `headless`}}",
       "http_directory": "http",
       "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -p",
       "boot_command": [
@@ -78,7 +80,7 @@
       "ssh_handshake_attempts": "120",
       "disk_size": 40960,
       "ssh_port": 22,
-      "headless": false,
+      "headless": "{{user `headless`}}",
       "http_directory": "http",
       "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -p",
       "boot_command": [
@@ -163,7 +165,7 @@
       "ssh_handshake_attempts": "120",
       "disk_size": 40960,
       "ssh_port": 22,
-      "headless": false,
+      "headless": "{{user `headless`}}",
       "http_directory": "http",
       "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -p",
       "boot_command": [
