@@ -18,7 +18,7 @@ packer build -parallel=false \
 **Downloads**
 
 * Available at Atlas
-  [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-Tumbleweed-x86_64)
+  [x86_64](https://app.vagrantup.com/opensuse/boxes/openSUSE-Tumbleweed-x86_64)
 
 
 ## Leap 15.0
@@ -32,7 +32,7 @@ packer build -parallel=false definitions/15.0-x86_64.json
 **Downloads**
 
 * Available at Atlas
-  [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-15.0-x86_64)
+  [x86_64](https://app.vagrantup.com/opensuse/boxes/openSUSE-15.0-x86_64)
 
 
 ## Leap 42.3
@@ -46,7 +46,7 @@ packer build -parallel=false definitions/42.3-x86_64.json
 **Downloads**
 
 * Available at Atlas
-  [x86_64](https://atlas.hashicorp.com/opensuse/boxes/openSUSE-42.3-x86_64)
+  [x86_64](https://app.vagrantup.com/opensuse/boxes/openSUSE-42.3-x86_64)
 
 
 ## License
