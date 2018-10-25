@@ -74,6 +74,11 @@
       <use>all</use>
       <partitions config:type="list">
         <partition>
+          <filesystem config:type="symbol">swap</filesystem>
+          <size>auto</size>
+          <mount>swap</mount>
+        </partition>
+        <partition>
           <filesystem config:type="symbol">btrfs</filesystem>
           <mount>/</mount>
         </partition>
