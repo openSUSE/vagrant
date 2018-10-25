@@ -72,6 +72,12 @@
       <device>/dev/sda</device>
       <initialize config:type="boolean">true</initialize>
       <use>all</use>
+      <partitions config:type="list">
+        <partition>
+          <filesystem config:type="symbol">btrfs</filesystem>
+          <mount>/</mount>
+        </partition>
+      </partitions>
     </drive>
   </partitioning>
 
