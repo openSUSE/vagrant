@@ -4,8 +4,8 @@
     "os": "Tumbleweed",
     "arch": "x86_64",
 
-    "iso_url": "http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot20180528-Media.iso",
-    "iso_checksum": "8a60ad84f49296dea174897c5a65bcd6152fa92bdc40926403544865b25011ab",
+    "iso_url": "http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot20181022-Media.iso",
+    "iso_checksum": "326e2a785bbc0ca72408d6ed43e3ff09cfc58b699dc65f38d05905629aa7998e",
     "iso_checksum_type": "sha256",
 
     "qemu_accelerator": "kvm",
