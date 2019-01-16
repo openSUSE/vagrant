@@ -1,0 +1,199 @@
+- job-template:
+    name: 'vagrant-publish-{distro}'
+    project-type: freestyle
+    description: 'Update the mapping of {distro} on Vagrant Cloud'
+    concurrent: true
+    builders:
+      - shell: |
+          #!/bin/bash -eou pipefail
+          ./upload_box.sh {trigger_url} opensuse libvirt
+          ./upload_box.sh {trigger_url} opensuse virtualbox
+
+    scm:
+      - git:
+         url: https://github.com/openSUSE/vagrant.git
+         branches:
+          - origin/master
+
+    triggers:
+      - pollurl:
+          cron: '* * * * *'
+          urls:
+            - url: '{trigger_url}'
+              check-date: true
+
+- job-template:
+    name: 'vagrant-test-{distro}-{provider}'
+    project-type: freestyle
+    description: 'Test the vagrant images of {distro} with the {provider} provider'
+    concurrent: true
+    builders:
+      - shell: |
+          #!/bin/bash -eou pipefail
+          cd tests
+          ./run_box_tests.sh {boxname} {provider} {distro}
+
+    scm:
+      - git:
+         url: https://github.com/openSUSE/vagrant.git
+         branches:
+          - origin/master
+
+    triggers:
+      - pollurl:
+          cron: '* * * * *'
+          urls:
+            - url: '{trigger_url}'
+              check-date: true
+
+    publishers:
+      - email:
+          recipients: dcermak@suse.com
+
+#
+# Publish the official Tumbleweed Vagrant box
+#
+- project:
+    name: vagrant-publish-Tumbleweed
+    distro: 'Tumbleweed'
+    trigger_url: 'https://download.opensuse.org/tumbleweed/appliances/boxes/Tumbleweed.x86_64.json'
+    jobs:
+      - 'vagrant-publish-{distro}'
+
+#
+# Tumbleweed in Virtualization:Appliances:Images:openSUSE-Tumbleweed
+#
+- project:
+    name: vagrant-test-Tumbleweed-virtualbox
+    distro: 'Tumbleweed'
+    provider: 'virtualbox'
+    boxname: 'Tumbleweed.x86_64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Tumbleweed/openSUSE_Tumbleweed/boxes/Tumbleweed.x86_64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+- project:
+    name: vagrant-test-Tumbleweed-libvirt
+    distro: 'Tumbleweed'
+    provider: 'libvirt'
+    boxname: 'Tumbleweed.x86_64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Tumbleweed/openSUSE_Tumbleweed/boxes/Tumbleweed.x86_64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+- project:
+    name: vagrant-test-Tumbleweed-vanilla-virtualbox
+    distro: 'Tumbleweed-vanilla'
+    provider: 'virtualbox'
+    boxname: 'Tumbleweed.x86_64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Tumbleweed/openSUSE_Tumbleweed_vanilla/boxes/Tumbleweed.x86_64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+- project:
+    name: vagrant-test-Tumbleweed-vanilla-libvirt
+    distro: 'Tumbleweed-vanilla'
+    provider: 'libvirt'
+    boxname: 'Tumbleweed.x86_64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Tumbleweed/openSUSE_Tumbleweed_vanilla/boxes/Tumbleweed.x86_64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+- project:
+    name: vagrant-test-Tumbleweed-arm-libvirt
+    distro: 'Tumbleweed-arm'
+    provider: 'libvirt'
+    boxname: 'Tumbleweed.aarch64-libvirt_aarch64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Tumbleweed/openSUSE_Tumbleweed_ARM/boxes/Tumbleweed.aarch64-libvirt_aarch64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+#
+# Leap 15.0 in Virtualization:Appliances:Images:openSUSE-Leap-15.0
+#
+- project:
+    name: vagrant-test-Leap-15.0-virtualbox
+    distro: '15.0'
+    provider: 'virtualbox'
+    boxname: 'Leap-15.0.x86_64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Leap-15.0/images/boxes/Leap-15.0.x86_64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+- project:
+    name: vagrant-test-Leap-15.0-libvirt
+    distro: '15.0'
+    provider: 'libvirt'
+    boxname: 'Leap-15.0.x86_64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Leap-15.0/images/boxes/Leap-15.0.x86_64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+- project:
+    name: vagrant-test-Leap-15.0-arm-libvirt
+    distro: '15.0-arm'
+    provider: 'libvirt'
+    boxname: 'Leap-15.0.aarch64-libvirt_aarch64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Leap-15.0/images_aarch64/boxes/Leap-15.0.aarch64-libvirt_aarch64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+#
+# Leap 15.1 in Virtualization:Appliances:Images:openSUSE-Leap-15.1
+#
+- project:
+    name: vagrant-test-Leap-15.1-virtualbox
+    distro: '15.1'
+    provider: 'virtualbox'
+    boxname: 'Leap-15.1.x86_64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Leap-15.1/images/boxes/Leap-15.1.x86_64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+- project:
+    name: vagrant-test-Leap-15.1-libvirt
+    distro: '15.1'
+    provider: 'libvirt'
+    boxname: 'Leap-15.1.x86_64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Leap-15.1/images/boxes/Leap-15.1.x86_64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+- project:
+    name: vagrant-test-Leap-15.1-arm-libvirt
+    distro: '15.1-arm'
+    provider: 'libvirt'
+    boxname: 'Leap-15.1.aarch64-libvirt_aarch64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Leap-15.1/images_aarch64/boxes/Leap-15.1.aarch64-libvirt_aarch64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+#
+# Leap 15.2 in Virtualization:Appliances:Images:openSUSE-Leap-15.2
+#
+- project:
+    name: vagrant-test-Leap-15.2-virtualbox
+    distro: '15.2'
+    provider: 'virtualbox'
+    boxname: 'Leap-15.2.x86_64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Leap-15.2/images/boxes/Leap-15.2.x86_64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+- project:
+    name: vagrant-test-Leap-15.2-libvirt
+    distro: '15.2'
+    provider: 'libvirt'
+    boxname: 'Leap-15.2.x86_64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Leap-15.2/images/boxes/Leap-15.2.x86_64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
+
+- project:
+    name: vagrant-test-Leap-15.2-arm-libvirt
+    distro: '15.2-arm'
+    provider: 'libvirt'
+    boxname: 'Leap-15.2.aarch64-libvirt_aarch64'
+    trigger_url: 'https://download.opensuse.org/repositories/Virtualization:/Appliances:/Images:/openSUSE-Leap-15.2/images_aarch64/boxes/Leap-15.2.aarch64-libvirt_aarch64.json'
+    jobs:
+      - 'vagrant-test-{distro}-{provider}'
