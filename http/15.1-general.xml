@@ -137,6 +137,7 @@
       <package>sudo</package>
       <package>vim</package>
       <package>wget</package>
+      <package>haveged</package>
     </packages>
   </software>
 
