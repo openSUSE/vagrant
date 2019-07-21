@@ -21,6 +21,14 @@ packer build -parallel=false \
   [x86_64](https://app.vagrantup.com/opensuse/boxes/openSUSE-Tumbleweed-x86_64)
 
 
+## Leap 15.1
+
+**Building**
+
+```bash
+packer build -parallel=false definitions/15.1-x86_64.json
+```
+
 ## Leap 15.0
 
 **Building**
