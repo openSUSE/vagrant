@@ -1,5 +1,9 @@
 # Changelog
 
+## 2019-08-13
+
+* Drop packer recipes and use KIWI instead
+
 ## 2016-05-31
 
 * Fixed loading of vboxfs module
