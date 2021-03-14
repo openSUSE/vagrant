@@ -33,7 +33,8 @@
 
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "{{user `memory`}}"],
-        ["modifyvm", "{{.Name}}", "--cpus", "{{user `cpus`}}"]
+        ["modifyvm", "{{.Name}}", "--cpus", "{{user `cpus`}}"],
+        ["modifyvm", "{{.Name}}", "--ioapic", "on"]
       ],
 
       "output_directory": "images/openSUSE-{{user `os`}}-virtualbox-{{user `arch`}}-{{user `version`}}",
